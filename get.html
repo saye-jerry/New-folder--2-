@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#102c2b">
+    <meta name="description"
+        content="Beautiful, made-to-measure glass for windows, doors and modern homes. Explore GlasHaus glass options and request a custom quote.">
+    <link rel="preconnect" href="https://images.unsplash.com">
+    <title>GlasHaus | Custom Glass for Windows & Doors</title>
+    <style>
+        :root {
+            color-scheme: light;
+            --ink: #172b2a;
+            --muted: #647574;
+            --deep: #102c2b;
+            --green: #2d6c5e;
+            --mint: #e9f1ed;
+            --paper: #f7f8f5;
+            --line: #e1e7e2;
+            --serif: Georgia, 'Times New Roman', serif;
+            --sans: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 92px;
+        }
+
+        body {
+            margin: 0;
+            background: var(--paper);
+            color: var(--ink);
+            font-family: var(--sans);
+            line-height: 1.65;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        a:focus-visible {
+            outline: 3px solid #d5a96d;
+            outline-offset: 4px;
+        }
+
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+            padding: 15px max(5vw, 24px);
+            background: rgba(255, 255, 255, 0.96);
+            border-bottom: 1px solid var(--line);
+            backdrop-filter: blur(14px);
+        }
+
+        .logo {
+            color: var(--deep);
+            font-family: var(--serif);
+            font-size: 27px;
+            font-weight: 700;
+            letter-spacing: -1px;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+
+        .logo span {
+            color: var(--green);
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+            gap: 8px 26px;
+        }
+
+        nav a {
+            color: #435654;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: color 180ms ease;
+        }
+
+        nav a:hover {
+            color: var(--green);
+        }
+
+        .nav-cta {
+            padding: 9px 16px;
+            border: 1px solid var(--green);
+            border-radius: 3px;
+            color: var(--green);
+        }
+
+        .hero {
+            position: relative;
+            display: grid;
+            min-height: min(700px, 78vh);
+            align-items: center;
+            overflow: hidden;
+            background-color: #314541;
+            background-image: linear-gradient(90deg, rgba(13, 35, 33, 0.82), rgba(13, 35, 33, 0.22)),
+                url('https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=2200&q=85');
+            background-position: center 54%;
+            background-size: cover;
+            color: white;
+        }
+
+        .hero-content {
+            width: min(1120px, 90%);
+            margin: 0 auto;
+            padding: 90px 0 115px;
+        }
+
+        .eyebrow {
+            margin: 0 0 18px;
+            color: #c9dfd4;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2.4px;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            max-width: 760px;
+            margin: 0;
+            font-family: var(--serif);
+            font-size: clamp(44px, 7vw, 82px);
+            font-weight: 400;
+            letter-spacing: -2.7px;
+            line-height: 1.06;
+        }
+
+        .hero-copy {
+            max-width: 590px;
+            margin: 22px 0 30px;
+            color: #edf2ef;
+            font-size: clamp(16px, 2vw, 19px);
+        }
+
+        .button {
+            display: inline-flex;
+            min-height: 50px;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 23px;
+            border: 1px solid transparent;
+            border-radius: 3px;
+            background: var(--green);
+            color: white;
+            font-size: 14px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: background 180ms ease, transform 180ms ease;
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+            background: #245649;
+        }
+
+        .button-light {
+            background: #fff;
+            color: var(--deep);
+        }
+
+        .button-light:hover {
+            background: #eaf1ec;
+        }
+
+        .hero-note {
+            position: absolute;
+            right: max(5vw, 24px);
+            bottom: 28px;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 12px;
+        }
+
+        .intro {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 94px 24px 70px;
+            text-align: center;
+        }
+
+        .intro .eyebrow {
+            color: var(--green);
+        }
+
+        .section-title {
+            margin: 0 0 15px;
+            color: var(--deep);
+            font-family: var(--serif);
+            font-size: clamp(34px, 5vw, 49px);
+            font-weight: 400;
+            letter-spacing: -1px;
+            line-height: 1.15;
+        }
+
+        .intro-copy {
+            max-width: 650px;
+            margin: 0 auto;
+            color: var(--muted);
+        }
+
+        .container {
+            width: min(1120px, 90%);
+            margin: 0 auto 100px;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 24px;
+        }
+
+        .card {
+            display: flex;
+            min-width: 0;
+            flex-direction: column;
+            overflow: hidden;
+            border: 1px solid var(--line);
+            background: #fff;
+            box-shadow: 0 12px 30px rgba(23, 43, 42, 0.045);
+            transition: transform 220ms ease, box-shadow 220ms ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 38px rgba(23, 43, 42, 0.1);
+        }
+
+        .card-image {
+            height: 235px;
+            overflow: hidden;
+            background: var(--mint);
+        }
+
+        .card img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 500ms ease;
+        }
+
+        .card:hover img {
+            transform: scale(1.04);
+        }
+
+        .card-content {
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+            padding: 25px;
+        }
+
+        .card-kicker {
+            margin: 0 0 8px;
+            color: var(--green);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .card-title {
+            margin: 0 0 10px;
+            color: var(--deep);
+            font-family: var(--serif);
+            font-size: 24px;
+            font-weight: 400;
+            line-height: 1.25;
+        }
+
+        .card-desc {
+            margin: 0 0 20px;
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .specs-box {
+            display: grid;
+            gap: 10px;
+            margin: 0 0 23px;
+            padding: 16px;
+            background: #f5f7f4;
+            font-size: 13px;
+        }
+
+        .spec-row {
+            display: grid;
+            grid-template-columns: 1fr 1.25fr;
+            gap: 12px;
+        }
+
+        .spec-label {
+            color: #546663;
+            font-weight: 600;
+        }
+
+        .spec-value {
+            color: var(--deep);
+            text-align: right;
+        }
+
+        .card .button {
+            width: 100%;
+            margin-top: auto;
+        }
+
+        .benefits {
+            padding: 74px 5vw;
+            background: var(--mint);
+        }
+
+        .benefit-inner {
+            display: grid;
+            width: min(1120px, 100%);
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 60px;
+            margin: 0 auto;
+        }
+
+        .benefits h2 {
+            margin: 0 0 15px;
+            color: var(--deep);
+            font-family: var(--serif);
+            font-size: clamp(32px, 4vw, 44px);
+            font-weight: 400;
+            line-height: 1.2;
+        }
+
+        .benefits p {
+            margin: 0;
+            color: var(--muted);
+        }
+
+        .benefit-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+        }
+
+        .benefit {
+            padding: 20px;
+            border: 1px solid rgba(45, 108, 94, 0.17);
+            background: rgba(255, 255, 255, 0.65);
+        }
+
+        .benefit strong {
+            display: block;
+            margin-bottom: 4px;
+            color: var(--deep);
+            font-size: 15px;
+        }
+
+        .benefit span {
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        .contact {
+            padding: 86px 24px;
+            background: var(--deep);
+            color: white;
+            text-align: center;
+        }
+
+        .contact .eyebrow {
+            color: #b6d2c5;
+        }
+
+        .contact h2 {
+            margin: 0 0 14px;
+            font-family: var(--serif);
+            font-size: clamp(36px, 5vw, 52px);
+            font-weight: 400;
+        }
+
+        .contact p:not(.eyebrow) {
+            margin: 0 auto 26px;
+            color: #d6e0db;
+        }
+
+        footer {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 24px max(5vw, 24px);
+            background: #0a211f;
+            color: #c3d0ca;
+            font-size: 12px;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        @media (max-width: 850px) {
+            .product-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .benefit-inner {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .site-header {
+                align-items: flex-start;
+                flex-direction: column;
+                gap: 8px;
+                padding: 12px 20px;
+            }
+
+            nav {
+                justify-content: flex-start;
+                gap: 6px 16px;
+            }
+
+            nav a {
+                font-size: 12px;
+            }
+
+            .nav-cta {
+                padding: 2px 8px;
+            }
+
+            .hero {
+                min-height: 590px;
+                background-position: 58% center;
+            }
+
+            .hero-content {
+                width: calc(100% - 40px);
+                padding: 78px 0 100px;
+            }
+
+            .hero h1 {
+                letter-spacing: -1.5px;
+            }
+
+            .hero-note {
+                right: 20px;
+                bottom: 18px;
+            }
+
+            .intro {
+                padding: 70px 20px 46px;
+            }
+
+            .container {
+                width: calc(100% - 40px);
+                margin-bottom: 70px;
+            }
+
+            .product-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .card-image {
+                height: 245px;
+            }
+
+            .benefits {
+                padding: 58px 20px;
+            }
+
+            .benefit-list {
+                grid-template-columns: 1fr;
+            }
+
+            .contact {
+                padding: 68px 20px;
+            }
+
+            footer {
+                flex-direction: column;
+                gap: 6px;
+                padding: 20px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                transition-duration: 0.01ms !important;
+                animation-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="site-header">
+        <a class="logo" href="#home" aria-label="GlasHaus home">Glas<span>Haus</span></a>
+        <nav aria-label="Main navigation">
+            <a href="#glass">Our glass</a>
+            <a href="#benefits">Why GlasHaus</a>
+            <a class="nav-cta" href="#contact">Request a quote</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" id="home" aria-labelledby="hero-title">
+            <div class="hero-content">
+                <p class="eyebrow">Thoughtful glass. Beautifully made.</p>
+                <h1 id="hero-title">A clearer view of home.</h1>
+                <p class="hero-copy">Made-to-measure glass for windows and doors, bringing light, comfort and lasting
+                    style to the spaces you love.</p>
+                <a class="button button-light" href="#glass">Explore our glass</a>
+            </div>
+            <span class="hero-note">Designed for the way you live</span>
+        </section>
+
+        <section class="intro" id="glass" aria-labelledby="glass-title">
+            <p class="eyebrow">The GlasHaus collection</p>
+            <h2 class="section-title" id="glass-title">The right glass changes everything.</h2>
+            <p class="intro-copy">From bright, open rooms to quiet, cozy corners, discover quality glass tailored to
+                your home, your measurements and your vision.</p>
+        </section>
+
+        <section class="container" aria-label="Glass options">
+            <div class="product-grid">
+                <article class="card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1000&q=85"
+                            alt="Close view looking up at reflective blue glass curtain-wall panels" loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <p class="card-kicker">Everyday elegance</p>
+                        <h3 class="card-title">Window glass</h3>
+                        <p class="card-desc">Let the daylight in with beautifully clear or softly tinted glass, cut to
+                            fit your home's windows.</p>
+                        <div class="specs-box" aria-label="Window glass specifications">
+                            <div class="spec-row"><span class="spec-label">Thickness</span><span class="spec-value">4mm,
+                                    5mm, 6mm</span></div>
+                            <div class="spec-row"><span class="spec-label">Finishes</span><span
+                                    class="spec-value">Clear, bronze, grey, green</span></div>
+                            <div class="spec-row"><span class="spec-label">Sizing</span><span class="spec-value">Made to
+                                    measure</span></div>
+                        </div>
+                        <a href="mailto:?subject=Window%20glass%20quote" class="button">Ask about window glass</a>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1000&q=85"
+                            alt="Modern glass partition panels with dark metal door frames" loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <p class="card-kicker">Made for everyday living</p>
+                        <h3 class="card-title">Tempered door glass</h3>
+                        <p class="card-desc">Durable safety glass for entryways, patio doors and sliding panels, where
+                            strength matters.</p>
+                        <div class="specs-box" aria-label="Tempered door glass specifications">
+                            <div class="spec-row"><span class="spec-label">Thickness</span><span class="spec-value">8mm,
+                                    10mm, 12mm</span></div>
+                            <div class="spec-row"><span class="spec-label">Finishes</span><span
+                                    class="spec-value">Clear, frosted, tinted</span></div>
+                            <div class="spec-row"><span class="spec-label">Sizing</span><span class="spec-value">Made to
+                                    measure</span></div>
+                        </div>
+                        <a href="mailto:?subject=Tempered%20door%20glass%20quote" class="button">Ask about door
+                            glass</a>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=1000&q=85"
+                            alt="Reflective glass facade panels on a commercial building" loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <p class="card-kicker">Comfort, all year round</p>
+                        <h3 class="card-title">Insulated glass</h3>
+                        <p class="card-desc">Double-glazed units help create a more comfortable home, with options for
+                            added thermal and sound insulation.</p>
+                        <div class="specs-box" aria-label="Insulated glass specifications">
+                            <div class="spec-row"><span class="spec-label">Unit thickness</span><span
+                                    class="spec-value">18mm, 24mm</span></div>
+                            <div class="spec-row"><span class="spec-label">Options</span><span class="spec-value">Clear,
+                                    reflective, Low-E</span></div>
+                            <div class="spec-row"><span class="spec-label">Sizing</span><span class="spec-value">Made to
+                                    measure</span></div>
+                        </div>
+                        <a href="mailto:?subject=Insulated%20glass%20quote" class="button">Ask about insulated glass</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="benefits" id="benefits" aria-labelledby="benefits-title">
+            <div class="benefit-inner">
+                <div>
+                    <p class="eyebrow">Made for your home</p>
+                    <h2 id="benefits-title">A personal fit, from first measure to final pane.</h2>
+                    <p>Every home is different. Choose the look and specifications that suit your project, then get in
+                        touch to talk through the details.</p>
+                </div>
+                <div class="benefit-list">
+                    <div class="benefit"><strong>Made to measure</strong><span>Glass sized around your project.</span>
+                    </div>
+                    <div class="benefit"><strong>Thoughtful options</strong><span>Find a finish that feels like
+                            you.</span></div>
+                    <div class="benefit"><strong>Helpful guidance</strong><span>Get support choosing your glass.</span>
+                    </div>
+                    <div class="benefit"><strong>Quality materials</strong><span>Options for lasting home
+                            comfort.</span></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact" id="contact" aria-labelledby="contact-title">
+            <p class="eyebrow">Your project starts here</p>
+            <h2 id="contact-title">Let's find your perfect pane.</h2>
+            <p>Tell us a little about your project and we'll help you explore the right options.</p>
+            <a class="button button-light" href="mailto:?subject=Custom%20glass%20quote">Request a custom quote</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 GlasHaus. Made for brighter, more comfortable homes.</p>
+        <p>Custom glass for windows and doors.</p>
+    </footer>
+</body>
+
+</html>
